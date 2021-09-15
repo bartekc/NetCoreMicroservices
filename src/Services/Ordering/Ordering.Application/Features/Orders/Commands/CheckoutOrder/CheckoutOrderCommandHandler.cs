@@ -19,11 +19,11 @@ namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
         private readonly IEmailService _emailService;
         private readonly ILogger<CheckoutOrderCommandHandler> _logger;
 
-        public CheckoutOrderCommandHandler(IOrderRepository orderRepository, IMapper mapper, IEmailService emailService, ILogger<CheckoutOrderCommandHandler> logger)
+        public CheckoutOrderCommandHandler(IOrderRepository orderRepository, IMapper mapper,  ILogger<CheckoutOrderCommandHandler> logger)
         {
             _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-            _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
+            //_emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
@@ -34,7 +34,7 @@ namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 
             _logger.LogInformation($"Order {newOrder.Id} is successfully created.");
 
-            await SendMail(newOrder);
+            //await SendMail(newOrder);
 
             return newOrder.Id;
         }
