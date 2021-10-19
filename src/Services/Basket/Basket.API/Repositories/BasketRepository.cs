@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
-namespace Basket.API.Repository
+namespace Basket.API.Repositories
 {
     public interface IBasketRepository
     {
